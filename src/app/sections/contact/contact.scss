@@ -1,0 +1,23 @@
+ p {
+     max-width: 46ch;
+     color: var(--muted);
+     margin: 0 0 1.5rem
+ }
+
+ .mail {
+     font-family: var(--display);
+     font-weight: 700;
+     font-size: clamp(1.5rem, 4.5vw, 2.7rem);
+     letter-spacing: -.02em;
+     text-decoration-thickness: 3px;
+     text-underline-offset: .2em;
+     text-decoration-color: var(--cobalt);
+     word-break: break-word
+ }
+
+ .links {
+     display: flex;
+     flex-wrap: wrap;
+     gap: .75rem;
+     margin-top: 2rem
+ }

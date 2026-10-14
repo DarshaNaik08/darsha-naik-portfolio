@@ -1,0 +1,6 @@
+<div class="marquee" role="group" aria-label="Technologies I use">
+    <div class="track">
+        <ul>@for (t of items; track t) { <li>{{ t }}</li> }</ul>
+        <ul aria-hidden="true">@for (t of items; track t) { <li>{{ t }}</li> }</ul>
+    </div>
+</div>

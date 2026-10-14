@@ -1,0 +1,122 @@
+ .site-header {
+     position: sticky;
+     top: 0;
+     z-index: 10;
+     background: color-mix(in srgb, var(--paper) 90%, transparent);
+     backdrop-filter: blur(8px);
+     border-bottom: 1px solid var(--rule)
+ }
+
+ .wrap {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     height: 56px
+ }
+
+ .brand {
+     font-family: var(--display);
+     font-weight: 700;
+     text-decoration: none;
+     font-size: 1.05rem
+ }
+
+ .nav {
+     display: flex;
+     gap: 1.5rem;
+     font-size: .95rem
+ }
+
+ .nav a {
+     text-decoration: none;
+     color: var(--muted)
+ }
+
+ .nav a:hover {
+     color: var(--ink)
+ }
+
+ .menu-btn {
+     display: none;
+     width: 44px;
+     height: 44px;
+     margin-right: -10px;
+     padding: 0;
+     border: 0;
+     background: none;
+     cursor: pointer;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     gap: 5px;
+     border-radius: 6px
+ }
+
+ .bar {
+     display: block;
+     width: 22px;
+     height: 2px;
+     border-radius: 2px;
+     background: var(--ink);
+     transition: transform .25s ease, opacity .2s ease
+ }
+
+ .menu-btn[aria-expanded="true"] .bar:nth-child(1) {
+     transform: translateY(7px) rotate(45deg)
+ }
+
+ .menu-btn[aria-expanded="true"] .bar:nth-child(2) {
+     opacity: 0
+ }
+
+ .menu-btn[aria-expanded="true"] .bar:nth-child(3) {
+     transform: translateY(-7px) rotate(-45deg)
+ }
+
+ @media (max-width:720px) {
+     .menu-btn {
+         display: inline-flex
+     }
+
+     .nav {
+         position: absolute;
+         top: 100%;
+         left: 0;
+         right: 0;
+         flex-direction: column;
+         gap: 0;
+         padding: .25rem 1.25rem 1rem;
+         background: var(--paper);
+         border-bottom: 1px solid var(--rule);
+         visibility: hidden;
+         opacity: 0;
+         transform: translateY(-8px);
+         transition: opacity .2s ease, transform .2s ease, visibility 0s linear .2s
+     }
+
+     .nav.open {
+         visibility: visible;
+         opacity: 1;
+         transform: none;
+         transition-delay: 0s
+     }
+
+     .nav a {
+         padding: .95rem 0;
+         font-size: 1.1rem;
+         color: var(--ink);
+         border-top: 1px solid var(--rule)
+     }
+
+     .nav a:first-child {
+         border-top: 0
+     }
+ }
+
+ @media (prefers-reduced-motion:reduce) {
+
+     .bar,
+     .nav {
+         transition: none
+     }
+ }

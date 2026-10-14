@@ -1,0 +1,26 @@
+<section class="block" id="experience">
+    <div class="wrap">
+        <h2 appReveal>Experience</h2>
+        @for (r of roles; track r.meta) {
+        <article class="split" appReveal>
+            <div>
+                <h3>{{ r.title }}</h3>
+                <p class="meta">{{ r.meta }}</p>
+            </div>
+            <ul class="points">
+                @for (p of r.points; track p) { <li>{{ p }}</li> }
+            </ul>
+        </article>
+        }
+        <article class="split" appReveal>
+            <div>
+                <h3>Education and certification</h3>
+            </div>
+            <div>
+                <p>M.Sc, Goa University, 2018.</p>
+                <p>Claude Code in Action, Anthropic. <a [href]="profile.certVerify" rel="noopener">Verify the
+                        credential</a>.</p>
+            </div>
+        </article>
+    </div>
+</section>

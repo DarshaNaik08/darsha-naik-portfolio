@@ -1,0 +1,16 @@
+<header class="site-header">
+    <div class="wrap">
+        <a class="brand" href="#top" (click)="close()">{{ profile.name }}</a>
+
+        <button class="menu-btn" type="button" aria-controls="site-nav" [attr.aria-expanded]="open()"
+            [attr.aria-label]="open() ? 'Close menu' : 'Open menu'" (click)="toggle()">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+
+        <nav id="site-nav" class="nav" [class.open]="open()" aria-label="Sections">
+            @for (l of links; track l.href) {
+            <a [href]="l.href" (click)="close()">{{ l.label }}</a>
+            }
+        </nav>
+    </div>
+</header>

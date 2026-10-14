@@ -1,0 +1,53 @@
+<section class="hero">
+    <div class="wrap hero-grid">
+        <div>
+            <div class="intro">
+                <app-avatar />
+                <p class="status"><span class="dot" aria-hidden="true"></span>Open to full stack and frontend roles</p>
+            </div>
+            <h1 [attr.aria-label]="profile.name">
+                @for (w of words; track w.text; let wi = $index) {
+                <span class="word" aria-hidden="true">@for (c of w.chars; track $index; let ci = $index) {<span
+                        class="ch" [style.--i]="w.offset + ci">{{ c }}</span>}</span>
+                @if (wi < words.length - 1) { <span aria-hidden="true">&ngsp;</span> }
+                    }
+            </h1>
+            <p class="role">{{ profile.role }}</p>
+            <p class="lede">{{ profile.lede }}</p>
+            <div class="actions">
+                <a class="btn btn-primary" appMagnetic href="#contact">Get in touch</a>
+                <a class="btn btn-quiet" appMagnetic [href]="profile.github" rel="noopener">GitHub</a>
+            </div>
+            <ul class="facts">
+                @for (f of profile.facts; track f.label) {
+                <li><strong>{{ f.value }}</strong> {{ f.label }}</li>
+                }
+            </ul>
+        </div>
+
+        <figure class="stack">
+            <figcaption class="stack-label">The stack I work across. Pick a layer.</figcaption>
+            <div class="layers" role="tablist" aria-label="Full stack layers" aria-orientation="vertical">
+                @for (l of layers; track l.id; let i = $index) {
+                <button class="layer" role="tab" type="button" [id]="'tab-' + l.id" aria-controls="layer-panel"
+                    [attr.aria-selected]="l.id === selectedId()" [tabindex]="l.id === selectedId() ? 0 : -1"
+                    (click)="select(l.id)" (keydown)="onKey($event, i)">
+                    <span class="layer-name">{{ l.name }}<span class="layer-sub">{{ l.sub }}</span></span>
+                    <span class="layer-mark" aria-hidden="true"></span>
+                </button>
+                }
+            </div>
+            <div class="panel" id="layer-panel" role="tabpanel" aria-live="polite"
+                [attr.aria-labelledby]="'tab-' + selectedId()">
+                @for (l of [selected()]; track l.id) {
+                <div class="panel-in">
+                    <p>{{ l.text }}</p>
+                    <ul class="chips">
+                        @for (c of l.chips; track c; let i = $index) { <li [style.--i]="i">{{ c }}</li> }
+                    </ul>
+                </div>
+                }
+            </div>
+        </figure>
+    </div>
+</section>

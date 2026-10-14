@@ -1,0 +1,19 @@
+<section class="block" id="work">
+    <div class="wrap">
+        <h2 appReveal>Selected work</h2>
+        @for (p of projects; track p.title; let i = $index) {
+        <article class="split" [appReveal]="(i % 2) * 90">
+            <div>
+                <h3>{{ p.title }}</h3>
+                <p class="meta">{{ p.meta }}</p>
+            </div>
+            <div>
+                <p>{{ p.text }}</p>
+                <ul class="chips">
+                    @for (t of p.tags; track t) { <li>{{ t }}</li> }
+                </ul>
+            </div>
+        </article>
+        }
+    </div>
+</section>

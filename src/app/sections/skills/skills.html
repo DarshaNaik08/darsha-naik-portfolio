@@ -1,0 +1,13 @@
+<section class="block" id="skills">
+    <div class="wrap">
+        <h2 appReveal>Skills</h2>
+        <dl class="skills">
+            @for (g of groups; track g.name; let i = $index) {
+            <div [appReveal]="(i % 2) * 90">
+                <dt>{{ g.name }}</dt>
+                <dd>{{ g.items }}</dd>
+            </div>
+            }
+        </dl>
+    </div>
+</section>
