@@ -86,8 +86,8 @@ export const ROLES: Role[] = [
 
 export const SKILLS: SkillGroup[] = [
   { name: 'Frontend', items: 'Angular 13–20, TypeScript, JavaScript (ES6+), RxJS, Reactive Forms, ReactJS, HTML5, CSS3, SCSS, Angular Material, Bootstrap, Tailwind CSS' },
-  { name: 'Backend', items: 'Node.js, Express.js, ASP.NET Core, C#, Firebase Cloud Functions, RESTful APIs, webhooks' },
-  { name: 'Data', items: 'Firestore, Firebase Realtime Database, SQL, MongoDB (learning)' },
+  { name: 'Backend', items: 'Node.js, Express.js, ASP.NET Core (.NET 10), C#,  Entity Framework Core, LINQ, Swagger / OpenAPI, Firebase Cloud Functions, RESTful APIs, webhooks' },
+  { name: 'Data', items: 'MSSQL, MySQL, Firestore, Firebase Realtime Database, SQL, MongoDB' },
   { name: 'Cloud and tooling', items: 'Google Cloud Platform, Firebase Hosting, Git, GitHub, Bitbucket, Playwright, Postman, Chrome DevTools' },
   { name: 'Integrations', items: 'Shopify, Razorpay, WhatsApp Business, Slack, Keka, Google Maps, Google Meet, Google Calendar' },
   { name: 'AI-assisted development', items: 'Claude Code, MCP servers, GitHub Copilot, prompt engineering, agent-based workflows' },
