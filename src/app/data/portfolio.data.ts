@@ -5,7 +5,7 @@ export interface SkillGroup { name: string; items: string; }
 
 export const PROFILE = {
   name: 'Darsha Naik',
-  role: 'Angular + Node.js full stack developer',
+  role: 'Angular + Node.js / .NET full stack developer',
   lede: 'I build Angular front ends, REST APIs and serverless backends, and own features from the first screen to the deployed service. Four years in, based in Bengaluru.',
   location: 'Bengaluru, Karnataka',
   email: 'darshanaik08@gmail.com',
