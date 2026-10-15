@@ -1,24 +1,58 @@
-# Darsha Naik – Portfolio (Angular 20)
+# Darsha Naik – Portfolio
 
-Standalone components, signals and the new control flow (`@for`). All copy lives in
-`src/app/data/portfolio.data.ts`, so updating the site means editing that one file.
+Personal portfolio of Darsha Naik, an Angular + Node.js / .NET full stack developer based in Bengaluru.
+
+**Live site:** https://darsha-naik.netlify.app/
+
+## Built with
+
+- Angular 20 (standalone components, signals, built-in control flow)
+- TypeScript and SCSS
+- Deployed on Netlify, with automatic deploys from `main`
+
+## Features
+
+- Interactive "stack explorer" in the hero that shows my work across the interface, API, serverless and integration layers (keyboard accessible)
+- Animated monogram badge, scrolling tech ticker and scroll-triggered reveals
+- Pointer effects on desktop: dot grid, glow, trailing ring and magnetic buttons
+- Responsive layout with a hamburger menu on mobile
+- Light and dark theme that follows the system setting
+- Respects `prefers-reduced-motion`
+- All content lives in one file, `src/app/data/portfolio.data.ts`, so updating the site means editing a single place
 
 ## Run locally
+
 ```bash
 npm install
 npm start          # http://localhost:4200
-npm run build      # output: dist/portfolio/browser
 ```
 
-## Deploy on Netlify (from GitHub, auto-deploys on push)
-1. Push this folder to a GitHub repo.
-2. Netlify → Add new site → Import an existing project → choose the repo.
-3. Settings are read from `netlify.toml`:
-   build command `npm run build`, publish directory `dist/portfolio/browser`.
+Build for production:
 
-## Deploy with the Netlify CLI
 ```bash
-npm install
-npm run build
-npx netlify-cli deploy --prod --dir=dist/portfolio/browser
+npm run build      # output in dist/portfolio/browser
 ```
+
+## Project structure
+
+```
+src/
+  app/
+    data/        portfolio content (profile, projects, roles, skills)
+    sections/    page sections (header, hero, work, experience, skills, contact, ...)
+    effects/     pointer effects and scroll/magnetic directives
+  styles.scss    global styles, design tokens and keyframes
+```
+
+## Deployment
+
+Netlify builds from `netlify.toml`:
+
+- Build command: `npm run build`
+- Publish directory: `dist/portfolio/browser`
+
+## Contact
+
+- Email: darshanaik08@gmail.com
+- LinkedIn: https://www.linkedin.com/in/darshanaik
+- GitHub: https://github.com/DarshaNaik08
